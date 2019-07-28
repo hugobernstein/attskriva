@@ -82,6 +82,7 @@ export function publiceranytt(done) {
 
 export function pubVue() {
   return gulp.src('vuepress/.vuepress/dist/**/*')
+    .pipe(gulp.dest('./dist'))
     .pipe(gulp.dest('./docs'));
 }
 
@@ -113,6 +114,11 @@ export function pugsidor() {
     .pipe(gulp.dest(paths.pug.dest));
 }
 
+export function fetchtex() {
+  return gulp.src('./orgmode/*.tex')
+    .pipe(gulp.dest('./latex'));
+}
+
 function reload(done) {
   server.reload();
   done();
@@ -135,6 +141,7 @@ function watch() {
   gulp.watch([paths.pug.src, 'orgutkasten/**/*.md'], pugsidor);
   gulp.watch('assets/styles/jeet-demo.scss', utvecklajeetstill);
   gulp.watch(paths.pollen.src, publicera);
+  gulp.watch('./vuepress/.vuepress/dist/*', pubVue);
 }
 
 // Uppgifter
@@ -146,6 +153,7 @@ const build = gulp.series(styles, pugsidor, publicera, deltatex, watch);
 const latex = gulp.series(deltatex, serve, watch);
 const vp = gulp.series(pubVue);
 
-gulp.task('default', build);
+gulp.task('default', gulp.series(fetchtex, pubVue, serve, watch));
+
 gulp.task('pubVue', pubVue);
 gulp.task('visa', gulp.series(serve));
