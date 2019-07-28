@@ -1,0 +1,66 @@
+doctype html
+html
+  include _includes/head.pug
+  body
+    include _includes/topnav.pug
+    .slideshow-container
+      .mySlides.fade
+        .numbertext 1 / 3
+        img(src="assets/img/cover-ett.jpg", style='max-width:100%')
+        .text 
+          include:markdown-it ../../orgutkasten/2018-09-10-desc.md
+      .mySlides.fade
+        .numbertext 2 / 3
+        img(src='assets/img/cover-tva.jpg', style='width:100%')
+        .text 
+          include:markdown-it ../../orgutkasten/2018-09-10-desc.md
+      .mySlides.fade
+        .numbertext 3 / 3
+        img(src='assets/img/cover-tre.jpg', style='width:100%')
+        .text 
+          include:markdown-it ../../orgutkasten/2018-09-10-desc.md
+      a.prev(onclick='plusSlides(-1)') &#10094;
+      a.next(onclick='plusSlides(1)') &#10095;
+    br
+    div(style='text-align:center')
+      span.dot(onclick='currentSlide(1)')
+      span.dot(onclick='currentSlide(2)')
+      span.dot(onclick='currentSlide(3)')
+    
+    .content
+      
+      h2 Den första delen
+        p Så detta är en prototyp av min webbplats.
+        p Yggdrasil har tre rötter. Den första går till människornas (Midgård) och gudarnas hemvist (Asgård), den andra till jättarnas hemvist (Jotunheim eller Utgård) och den tredje till underjorden (Nifelheim), på trädets norra sida.
+        p this document illusitrites the principle of the project: 
+          a(href='2018-08-17-eirprogrammet.pdf') Eirprogrammet (pdf)
+        
+      h2 Image Modal
+      p In this example, we use CSS to create a modal (dialog box) that is hidden by default.
+      p We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.
+      img#myImg(src='assets/img/test.jpg', alt='test', style='width:100%;max-width:300px')
+      
+      #myModal.modal
+        span.close close
+        img.modal-content#img01
+        #caption
+          
+      div
+        include:markdown-it ../../orgutkasten/2018-09-10-desc.md
+      hr
+    h2 Flex box
+    #main
+      article
+        include:markdown-it ../../orgutkasten/2018-09-10-desc.md
+        p.strong next pollen templates will be created.
+      nav
+        ul
+          each val, index in ['intro', 'methods', 'results', 'conclusions', 'ref']
+            li= index + ': ' +val
+      aside
+        hr
+        p 据说可以自适应浏览器宽度，高度可固定也可以由内容撑开。不过我没有实现。
+        hr
+        
+    include _includes/footer.pug
+    include _includes/_scripts.pug

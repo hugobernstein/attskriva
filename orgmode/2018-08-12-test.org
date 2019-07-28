@@ -1,0 +1,35 @@
+#+TITLE:test
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+\hrule
+\begin{abstract}
+\noindent 支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器，间隔最大使它有别于感知机；SVM还包括核技巧，这使它成为实质上的非线性分类器。
+SVM的的学习策略就是间隔最大化，可形式化为一个求解凸二次规划的问题，也等价于正则化的合页损失函数的最小化问题。
+SVM的的学习算法就是求解凸二次规划的最优化算法。
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\begin{center}
+  \noindent Powered by OrgMode and LaTeX{}
+\end{center}
+\hrule
+\newpage
+
+* Intro
+支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器，间隔最大使它有别于感知机；SVM还包括核技巧，这使它成为实质上的非线性分类器。
+SVM的的学习策略就是间隔最大化，可形式化为一个求解凸二次规划的问题，也等价于正则化的合页损失函数的最小化问题。
+SVM的的学习算法就是求解凸二次规划的最优化算法。

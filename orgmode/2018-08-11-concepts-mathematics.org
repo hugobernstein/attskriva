@@ -1,0 +1,65 @@
+#+TITLE:concepts mathematics
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+\hrule
+\begin{abstract}
+\noindent 很多年没有读数学参考资料，基本的概念都已经忘得差不多了。
+近来在学习支持向量机，采用\LaTeX{}的方法来记笔记。
+所以需要复习数学分析。
+本文以名词解释的方式回顾了数学概念、定义和定理。
+
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+
+\begin{center}
+  \noindent Powered by OrgMode and \LaTeX{}\par
+\end{center}
+
+\newpage
+
+* 数学表达式
+\begin{description}
+  \item[s.t.] Short for Subject To, Such That or So That;
+\end{description}
+
+Usually, the acronym
+/s.t./
+means such that. In the context of optimization, it means subject to. Also note that such that does not have the same meaning as so that.
+*Such that*, describes how something should be done.
+*So that*, describes why something should be done.
+For clarity, it's usually best to avoid
+/s.t./
+and simply write such that.
+
+
+* 映射、极限和连续
+\begin{description}
+  \item[有理数稠密性] 任意两个有理数之间必存在一个有理数。
+\end{description}
+* 支持向量机
+
+\begin{description}
+  \item[Perceptron] 感知机，一种二分类的线性分类模型，输入为实例的特征向量，输出为实例的类别 (取+1和-1)；
+\end{description}
+
+\begin{description}
+  \item[Maximum Margin Classifier] 最大间隔分类器，对一个数据点进行分类，当超平面离数据点的间隔越大，分类的确信度也越大，最大间隔分类超平面中的间隔指的是几何间隔。
+\end{description}

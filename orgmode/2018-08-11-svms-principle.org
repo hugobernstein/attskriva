@@ -1,0 +1,173 @@
+#+TITLE:SVMs principle
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+
+\hrule
+\begin{abstract}
+\noindent
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+
+\begin{center}
+  \noindent Powered by OrgMode and \LaTeX{}
+\end{center}
+\newpage
+
+
+* Intro
+支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的间隔最大的线性分类器，间隔最大使它有别于感知机；SVM还包括核技巧，这使它成为实质上的非线性分类器。
+SVM的的学习策略就是间隔最大化，可形式化为一个求解凸二次规划的问题，也等价于正则化的合页损失函数的最小化问题。
+SVM的的学习算法就是求解凸二次规划的最优化算法。
+
+** 分类标准的起源是Logistic回归
+对于给定一些分属于两个不同的类的数据点，需要找到一个线性分类器将它们分为两类。
+如果用
+$x$
+表示数据点，用
+$y, (y \in (1,-1))$
+表示类别，一个线性分类器的学习目标就是要在
+$n$
+维数据空间中找到一个超平面(Hyper Plane)，用方程表示为
+$w^T x + b = 0$
+，其中
+$T$
+表示转置。
+
+Logistic回归的目的是从特征学习出一个
+$0/1$
+分类模型，这个模型将特性的线性组合作为自变量。
+由于自变量的取值范围是负无穷到正无穷，因此使用logistic函数(aka, sigmoid函数) 将自变量映射到
+$(0,1)$
+上，映射后的值被认为是属于
+$y=1$
+的概率。
+
+* 线性SVM算法原理
+SVM学习的基本想法是求解能够正确划分训练数据集并且几何间隔最大的分离超平面。
+如下图所示， $\omega{}x+b=0$  即为分离超平面，对于线性可分的数据集来说，这样的超平面有无穷多个（即感知机），但是几何间隔最大的分离超平面却是唯一的。
+
+假设给定一个特征空间上的训练数据集
+
+$T = {(x_1,y_1),(x_2,y_2), \dots, (x_N,y_N)}$
+
+其中，
+
+$x_i \in \mathbb{R}^n$
+
+$y_i \in \{+1,-1\}, i=1,2,\dots N$
+
+其中，$x_i$ 为第 $i$ 个特征向量，
+为类标记，当它等于
+时为正例；等于
+时为负例。
+再假设训练数据集是线性可分的。
+
+** 线性可分
+
+关于样本点
+$(x_i,y_i)$
+的几何间隔为
+$\gamma_i = y_i \left( \frac{ \omega }{\|\omega\|}x_i + \frac{b}{\|\omega\|}\right)$
+。
+
+超平面关于所有样本点的几何间隔的最小值为：
+$\gamma = \min\limits_{i=1,2,\dots,N} \gamma_i$
+。
+这个距离实为支持向量到超平面的距离。
+
+SVM模型的 *求解最大分割超平面问题* 可以表示为 *约束最优化问题* ：
+
+$\max\limits_{\omega,b} \gamma$
+
+** 支持向量
+
+** 凸二次规划
+...
+
+训练完成后，大部分的训练样本都不需要保留，最终模型仅与支持向量有关。
+
+
+* 非线性SVM算法原理
+对于输入空间中的非线性分类问题，可以通过非线性变换将其转化为高维特征空间中的线性分类问题，在高维特征空间中学习线性支持向量机。
+在线性支持向量机学习的对偶问题里，目标函数和分类决策函数都只涉及实例和实例之间的内积，
+所以不需要显式地指定非线性变换，而是用核函数替换当中的内积。
+
+$K(x,z)$
+是一个函数或正定核，意味着存在一个从输入空间到特征空间的映射
+$\phi(x)$
+，对任意输入空间中的 $x,z$ ，有
+$K(x,z) = \phi(x) \phi(z)$
+。
+
+在线性支持向量机学习的对偶问题里，用核函数
+$K(x,z)$
+替代内积，求解得到的就是非线性支持向量机
+$f(x) = sign \left( \displaystyle\sum_{i=1}^N \alpha_i^* y_i K (x,x_i) + b^* \right)$
+
+** 非线性支持向量机学习算法
+- *输入* ：训练数据集
+$T = \{(x_1,y_1),(x_2,y_2),\dots,(x_N,y_N)\}$
+，其中
+$x_i \in \mathbb{R}^n$
+，
+$y_i \in \{+1,-1 \}, i=1,2,\dots,N$
+；
+- *输出* ：分离超平面和分类决策函数
+
+首先选取合适的核函数
+$K(x,z)$
+和惩罚参数
+$C > 0$
+，构造并求解凸二次规划问题：
+
+
+$\min\limits_{\alpha} \frac{1}{2} \displaystyle\sum_{i=1}^N \displaystyle\sum_{j=1}^N \alpha_i \alpha_j y_i y_j K (x_i,x_j) - \displaystyle\sum_{i=1}^N \alpha_i$
+
+$s.t. \displaystyle\sum_{i=1}^N \alpha_i y_i = 0$
+
+$0 \leq \alpha_i \leq C, i=1,2,\dots,N$
+
+从而得到最优解
+$\alpha^* = (\alpha_1^*, \alpha_2^*,\dots,\alpha_N^*)$
+。
+
+然后进行计算，选择
+$\alpha^*$
+的一个分量
+$\alpha_j^*$
+满足条件
+$0 < \alpha_j^* < C$
+，计算
+$b^* = y_j - \displaystyle\sum_{i=1}^N \alpha_i^* y_i K (x_i,x_j)$
+。
+
+分类决策函数为：
+$f(x) = sign \left( \displaystyle\sum_{i=1}^N \alpha_i^* y_i K(x,x_i) + b^* \right)$
+
+高斯核函数是一个常用的核函数：
+$K(x,z) = exp \left(- \frac{\|x - z\|^2}{2\sigma^2} \right)$
+
+对应的SVM是高斯径向基函数分类器，此情况下的分类决策函数为：
+
+$f(x) = sign\left(\displaystyle \sum_{i=1}^{N} \alpha^*_i y_i exp\left(-\frac{\|x - z\|^2}{2\sigma^2}\right) + b^*\right)$
+
+** 高斯核函数
+所谓径向基函数(Radial Basis Function, RBF)，是某种沿径向对称的标量函数。

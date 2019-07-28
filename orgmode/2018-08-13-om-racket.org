@@ -1,0 +1,84 @@
+#+TITLE:om racket
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+\hrule
+\begin{abstract}
+\noindent
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+\begin{center}
+  \noindent Powered by OrgMode and \LaTeX{}
+\end{center}
+\newpage
+
+* Environment
+** Running Racket in terminal under MacOS
+How to use Racket in terminal?
+
+#+BEGIN_SRC text
+  ln -sf /Applications/Racket\ v6.2.1/bin/racket /usr/local/bin/racket
+#+END_SRC
+
+* Från Quora
+
+** Från Shriram Krishnamurthi
+Racket is indeed used commercially.
+
+There are many reasons to use Racket. It has a bunch of things you would expect to find, such as many practical libraries, integration with operating system calls, embedding and embeddability, separate compilation, modules, GUI support, etc.
+
+But the reason Racket is important is that it also has some (virtually) unique features that can change the way you think about programming. I\rq{}ll highlight just a few:
+
+- Racket has the most sophisticated macro system you will find. There\rq{}s a general rule that if you have lots and lots and lots of something, it effectively becomes something else (as Hegel discussed). Racket macros are like this. They are so rich and so pervasive that they actually enable an entirely new kind of programming, where building languages inside your language is a kind of first-class feature. For a worked example, see F*dging up a Racket. This can change the way you architect systems.
+- Racket has advanced linguistic support for creating process-like abstractions within the language. What you had to go out to the operating system for, leading to less robustness and portability and much heavier weight, you can now do robustly, portably, and cheaply within the program. This again changes the way you architect systems.
+- Racket has delimited continuations. This gives you enormous power in creating control abstractions. This too changes the way you architect systems.
+- Racket has perhaps the most sophisticated yet practical contract system of any contemporary language. Building a cheap assertion system is trivial; anyone can do it in an afternoon. Building a rich contract system is very subtle and has taken a decade-and-a-half. Because this changes the kinds of statements you make about your program, this changes the way you think about describing your system.
+- Racket has a typed language, Typed Racket, which has a very powerful interoperation story with Racket (helping kick off the trend of ``gradual typing''). This again changes the way you think about describing your system and splitting it into typed and untyped chunks.
+
+You can read more about the Racket philosophy at The Racket Manifesto.
+
+So these are all things at which Racket is virtually unique, and their combination is even richer than the individual pieces. That\rq{}s why Racket rewards study, and also enables the creation of very elegant and sophisticated systems with a good baseline of performance.
+
+Unfortunately, Quora is a bad place to ask Racket questions. You\rq{}d be far better off asking them on the Racket lists: Racket: Mailing Lists. Hope this gives readers reason to want to head over there!
+
+** Från Wesley Bitomski
+It powers Hacker News. The whole site runs in a single-threaded Racket process, using the Arc language mode.
+
+Don\rq{}t think: ``that\rq{}s bad design.'' Think instead: ``that\rq{}s pretty beefy if it can handle all that traffic in a single thread.''
+
+Naughty Dog uses it to handle the logic and scripting for their games, preferring C++ to handle speed-sensitive things. It used to be Common Lisp, but Sony had a problem with that, or so the legend goes.
+
+I use it personally to test server endpoints, and to see if the systems I create make sense to a client. If you write a client against InCrowd\rq{}s API, you will be able to tell when I started to do this, as the newer parts are less awful than the older bits.
+
+We\rq{}re also writing a video editing micro-service in Racket, as it is one of a very small number of languages (the others being C and C++) with already existing bindings to, and abstractions upon, MLT that I don\rq{}t have to maintain.
+
+Along the way, I find that it\rq{}ll consume (and emit, in various ways) JSON and XML in a natural and sensible way with zero bootstrapping, since those will just be parsed into language-primitive data structures that can be sorted through in the usual way. I can write salient web services without needing to hunt around for a framework, as specialized programming modes specific to web programming ship with the standard distribution. System logging is as easy to set up as setting an environment variable to the log level you want to log at (which is PLTSYSLOG in case you\rq{}re wondering.) I can emit code that I can then run in a protected sandbox with only a simple quasi-quoted data template, which is something that I ended up doing as the existing MLT bindings aren\rq{}t exactly thread-safe.
+
+So, yeah. Racket is a perfectly capable production system. Folks are just scared to employ it as it\rq{}s Lisp.
+
+* to build a personal web site using pollen
+There are some arguments on reddit.
+jessealama uses pollen for his own site, [[http://lisp.sh][lisp.sh]].
+AlarmingMassOfBears says, [[https://www.leafac.com/prose/programming-language-theory-explained-for-the-working-programmer--principles-of-programming-languages/][Leafac's blog]]
+is written with Pollen.
+UnderwaterTelephone uses Pollen and he thinks it is fantastic.
+If the website you are looking to build is a static site, i.e., a blog, landing page, something that doesn't need to interact with processes running on a server, that is the best use case for Pollen, and if that is indeed what you are doing,
+you do not need a web host what supports racket, or an instanced server.
+There are a lot of free static hosts, such as Github Pages, which wuold allow you to write your pollen content locally, render it, and push it to a repo and have it online instantly.

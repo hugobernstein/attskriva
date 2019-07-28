@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hugos Tekniska Anteckningar</title><link rel="stylesheet" href="../../assets/css/master.css"></head><body><div class="topnav"><a class="active" href="..index.html">Hem</a><a href="..urd.html">Urd</a><a href="..verdandi.html">Verdandi</a><a href="..skuld.html">Skuld</a><a class="right" href="index.ptree">υ</a></div><div id="main"><section><div id="chartcircle"></div></section></div><div class="footer"><p>Hugos Tekniska Anteckningar, 2k18</p></div><script type="text/javascript" src="assets/js/master.js"></script><script type="text/javascript" src="assets/js/slideshow.js"></script><script src="https://d3js.org/d3.v5.min.js"></script><script>d3.select('#chartbar')
+  .selectAll("div")
+  .data([4, 8, 15, 16, 23, 42])
+  .enter()
+  .append("div")
+  .style("height", (d)=> d + "px")
+
+var data = [{
+  label: "7am",
+  sales: 20
+},{
+  label: "8am",
+  sales: 12
+}, {
+  label: "9am",
+  sales: 8
+}, {
+  label: "10am",
+  sales: 27
+}]
+
+var g = d3.select('#chartcircle')
+  .selectAll("g")
+  .data(data)
+  .enter()
+  .append('g')
+g.append("circle")
+  .attr('cy', 40)
+  .attr('cx', function(d, i) {(i+1) * 50)}
+  .attr('r', function(d) {d.sales})
+g.append("text")
+  .attr('y', 90)
+  .attr('x', function(d, i) {(i+1) * 50)}
+  .text(function(d) {d.label})
+</script></body></html>

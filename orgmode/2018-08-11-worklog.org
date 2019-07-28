@@ -1,0 +1,53 @@
+#+TITLE:worklog
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+
+\hrule
+\begin{abstract}
+\noindent
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+
+\begin{center}
+  \noindent Powered by OrgMode and \LaTeX{}
+\end{center}
+\newpage
+
+* preparing gulpfile
+- texdelivery
+- xelatex
+
+** gulp.watch is still a challenge
+
+** xelatex multiple files
+*find* and *for loop* were used.
+
+* 重新学数学
+如果我的中长期目标是成为数据科学家。
+那么数学就是不可避免的任务了。
+数学分析和线性代数的学习曲线是很陡峭的。
+从零开始学高等数学是困难的。
+本科课程我已经几乎忘光了。
+不过经过第一天的尝试之后，我发现自己还是有一些印象。
+
+* I would like to create a pollen task here
+So racket document system is available here.
+But my one of my purposes is making the directory clean and clear, thus js, css and other assets should be archived.

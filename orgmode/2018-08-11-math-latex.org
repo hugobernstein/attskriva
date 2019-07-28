@@ -1,0 +1,113 @@
+#+TITLE:math latex
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+#+LATEX_HEADER: \usepackage{mathtools}
+\hrule
+\begin{abstract}
+\noindent 用\LaTeX{}做数学相关的笔记是现有最好的方法。本文搜集了各种数学表达式的\LaTeX{}语法。
+\vspace{3ex}
+\end{abstract}
+\hrule
+\tableofcontents
+\newpage
+
+* packages
+the *amsmath* and *mathtools*
+
+* symbols
+$\forall x \in X, \quad \exists y \leq \epsilon$
+
+The following ten characters have special meanings in (La)TeX:
+\&, \%, \$, \#, \_, \{, \}, \~, \^,  \\
+
+* Greek letters
+Greek letters are commonly used in mathematics.
+What you should do is typing the name of the letter after a backslash.
+if the first letter is lowercase, you will get a lowercase Greek letter;
+if the first letter (and only the first letter) is uppercase, then you will get an uppercase letter.
+
+\alpha, \Alpha, \beta, \Beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \varphi, \mu
+
+* operators
+
+$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$
+
+$\lim_{x \to \infty} \exp(-x) = 0$
+
+* powers and indices
+
+$k_{n+1} = n^2 + k_n^2 - k_{n-1}$
+
+for powers with more than one digit, surround the power with{}:
+
+$n^{22}$
+
+An underscore( _ ) can be used with a vertical bar ( | ) to denote evaluation using subscript notation in mathematics:
+
+$f(n) = n^5 + 4n^2 + 2|_{n=17}$
+
+* fractions and binomials
+A fraction is created using the command: $\\frac\{numerator\}\{denominator\}$.
+
+$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
+
+* roots
+$\sqrt{\frac{a}{b}}$
+
+$\sqrt[n]{1+x+x^2+x^3+\dots+x^n}$
+
+* sums and integrals
+
+$\displaystyle\sum_{i=1}^{10} t_i$
+
+$\int_0^\infty \mathrm{e}^{-x}\, \mathrm{d}x$
+
+There are many other commands which operate in a similar manner:
+
+$\sum$
+$\bigoplus$
+$\bigcup$
+
+
+* accents
+
+$\bar{a}$
+$\vec{a}$
+$\hat{a}$
+$\overrightarrow{AB}$
+$\overleftarrow{AB}$
+
+* plus and minus signs
+
+$\pm$
+$\mp$
+
+* controlling horizontal spacing
+LaTeX is obviously pretty good at typesetting maths—it was one of the chief aims of the core TeX system that LaTeX extends. However, it can't always be relied upon to accurately interpret formulas in the way you did. It has to make certain assumptions when there are ambiguous expressions. The result tends to be slightly incorrect horizontal spacing. In these events, the output is still satisfactory, yet any perfectionists will no doubt wish to fine-tune their formulas to ensure spacing is correct. These are generally very subtle adjustments.
+
+There are other occasions where LaTeX has done its job correctly, but you just want to add some space, maybe to add a comment of some kind. For example, in the following equation, it is preferable to ensure there is a decent amount of space between the maths and the text.
+
+\begin{equation}
+f(n) =
+    \begin{cases}
+      n/2 & \quad \text{if } n \text{ is even} \\
+      -(n+1)/2 & \quad \text{if } n \text{ is odd}
+    \end{cases}
+\end{equation}
+
+* källor
+- https://en.wikibooks.org/wiki/LaTeX/Mathematics

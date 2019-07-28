@@ -1,0 +1,128 @@
+#+TITLE:eirprogrammet
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+\hrule
+\begin{abstract}
+\noindent 本项目所依赖的基础学科已经有长时间的发展，包括计算机科学、临床检验医学和分子生物学。
+已有很多技术在应用领域发挥着重要的影响。
+然而国内并没有很多相关应用的报道，最主要的原因来自研究者和临床工作者的隔阂。
+前期工作为信息搜集和数据采集技术的建立、数据库选择和建立、翻译记忆库的建立、SOP模版系统和统计分析以及数据可视化系统的建立。
+短期目标是将支持向量机(SVMs)和临床试验和实践结合起来。
+中长期目标为将数据科学和临床实践结合起来，包括人工智能(分类、聚类)和区块链，实现远程医疗和数字医疗。
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+\begin{center}
+  \noindent Powered by OrgMode and LaTeX{}
+\end{center}
+\newpage
+
+* purpose
+第三方数据分析实验室。
+我不确定有没有市场。
+因为现在数据是很敏感的话题。
+
+很多临床单位缺乏合格的数据分析人员。
+国内临床单位现有分析方法和技术很落后，Excel是很好的工具，但是不专业，效率低下。
+
+这样的数据分析实验室可用于帮带医院的发展。
+再教育和培训领域。
+
+* intro
+Recent breakthroughs in molecular biology methods including both structural assays (e.g., sequencing) and functional ones (e.g., gene expression) combined with an explosive proliferation of electronically accessible medical data offer remarkable opportunities for new discoveries that are already revolutionizing the biomedical research and patient care landscapes. These discoveries are directly relevant to improved patient management (e.g., enhanced diagnostic modeling, as well as personalized treatment modeling), and to more foundational scientific discoveries (e.g., understanding the molecular mechanisms of diseases and devising targeted new therapies to prevent or cure them).
+
+Closing the gap between the massive amounts of biomedical knowledge that is hidden inside raw data waiting to be discovered on one hand, and the next generation of diagnostics, personalized treatments and new drugs, on the other hand, completely relies on sophisticated data analytics. Fortunately in parallel with the development of new powerful ways to measure microscopic and macroscopic phenotypes, the scientific community has been working hard at and has witnessed the emergence of many powerful analytics that can measure up to the challenge.
+
+The purpose of the present book is to disseminate conceptually clear and operationally useful information about a cutting edge class of data analysis tools, the family of “Support Vector Machines” (“SVMs”) learning methods. SVMs are very important because they can handle well datasets and modeling tasks that are very problematic for other analysis methods. For example: (i) SVMs work well in datasets that have a very large number of variables and relatively small sample size; (ii) SVMs can learn both simple and highly complex models; (iii) SVMs have strong built-in protections against a phenomenon that is deleterious to modern high-dimensional modeling, known as “overfitting” (intuitively: when models work well in discovery datasets but fail subsequently in application or validation data). Because of these properties, SVMs have documented superior performance compared to other algorithms in many, if not the majority of, types of biomedical data to date.
+However, biomedical researchers often experience difficulties grasping both the theory and applications of these important methods. This is, we believe, primarily due to lack of necessary technical background in mathematics, computer science and machine learning. A consequence of this situation is the observed significant lag in the adoption of SVMs in the biomedical scientific community compared to the general sciences. The purpose of this book is to help alleviate this problem by introducing SVMs and their extensions, allowing thus biomedical researchers to understand them and apply them effectively in real-life research, education, and possibly clinical practice.
+
+We acknowledge that many excellent books have been written on SVMs, and we have been ourselves beneficiaries of their teachings. However in our experience as educators, the majority of biomedical researchers cannot fully benefit from the current literature on SVMs because of the advanced level of mathematical sophistication it requires. Our work aims to circumvent these prerequisites and to be accessible to the full spectrum of biomedical researchers assuming only a rudimentary prior knowledge of mathematics and computation (roughly high-school or first-year college level). Given the stated focus, we use terminology which is familiar to biomedical researchers and healthcare professionals.
+
+The book consists of two parts: in volume I we cover basic theory; in volume II we present several application and validation case studies. As the reader will quickly discover, volume I (theory) follows the approach of “programmed learning” whereby material is presented in short sections (“frames”). Each frame consists of a very small amount of information to be learned, a problem, and answers to the problem. The reader proceeds to the next frame after verifying that he/she gave (or understands the) correct answers to the current frame. We chose this method because it is particularly effective for breaking down technically complex concepts and making them easily digestible. Volume II with case studies follows a conventional narrative approach since it does not involve hard-to-grasp technical material.
+
+Over the years we have taught SVMs (at different levels of depth) to a variety of audiences that include: graduate students and post-doctoral fellows in Biomedical Informatics, Computer Science, Clinical Investigation, Clinical Pathology and professional statisticians, medical informaticians, biological researchers, etc. We have taught aspects of SVMs in graduate school courses, professional society seminars, and pathology residents (due to the relevancy of SVMs to molecular profiling of diseases). In a research context, authors of this book have contributed to the invention of the core SVM methods, they have produced theorems and empirical results for understanding their behavior, they have applied SVMs to solve real-life scientific and industrial projects, they have guided student M.S. and Ph.D. theses with a heavy SVM emphasis, and they have authored software that uses SVMs to perform complex analytic tasks. We hope that these theoretical and applied contributions and experiences will be adequately reflected in making this book both technically accurate and up-to-date as well as grounding it on state-of-the-art research.
+
+We wish to emphasize that in writing this book we were very careful to point out both the strengths and the weaknesses of SVMs and to not create the impression that SVMs are a “one solution fits all” data analysis paradigm (or that we advocate them as such). Toward that goal we have dedicated considerable space in making comparisons of SVMs with other important statistical and machine learning models, showing current limitations of SVMs whenever they exist, and pointing out theoretical and empirical evidence for appropriate use of the right tool for the job.
+
+The measure of success of this book is whether it will empower researchers, educators and practitioners in the health sciences in both academic and industry settings to advance science and patient care through the understanding and use of a very powerful class of computational methods.
+
+** SVMs
+Support Vector Machines (SVMs) are among the most important recent developments in pattern recognition and statistical machine learning. They have found a great range of applications in various fields including biology and medicine. However, biomedical researchers often experience difficulties grasping both the theory and applications of these important methods because of lack of technical background.
+** scientists
+
+*** Alexander Statnikov
+He is Assistant Professor in the Department of Medicine and Center for Health Informatics and Bioinformatics at New York University Langone Medical Center, Director of the Computational Causal Discovery Laboratory, and Benchmarking Director of the Best Practices Integrative Informatics Consultation Service. He is an author of more than 40 peer-reviewed publications (books, book chapters, journal papers, conference papers, etc.) and a co-inventor of 4 pending patents in machine learning and biomedical informatics. Most of his papers and research rely on the use of Support Vector Machines (SVM) algorithms. Dr. Statnikov is a co-inventor and a primary developer of the SVM-based software system GEMS for automated development of molecular signatures and biomarker discovery from microarray gene expression data that has more than 1000 registered users all over the world. The primary publication about the GEMS system has received more than 300 publications so far. Dr. Statnikov has also made a significant contribution to the development of the SVM-based system FAST-AIMS for automated analysis of mass-spectrometry data. In addition to the above, Dr. Statnikov designed many algorithms, conducted their empirical evaluations, and made other important contributions to the fields of machine learning and pattern recognition, analysis of high-throughput biomedical data, computational causal discovery, and biomedical informatics.
+
+*** Constantin F. Aliferis
+He is the Director of the Center for Health Informatics and Bioinformatics at New York University, the Director of Informatics for the NYU Clinical and Translational Science Institute, Director of the Molecular Signatures Laboratory, Scientific Director of the Best Practices Integrative Informatics Consultation Service at NYULMC, and an elected Fellow of the American College of Medical Informatics (ACMI). He is an Associate Professor in the Department of Pathology of NYU School of Medicine, and has adjunct appointments in Biomedical Informatics and Biostatistics at Vanderbilt University. In the past, he has also held faculty appointments in Computer Science and Cancer Biology at Vanderbilt. Dr. Aliferis has made methodological and applied contributions to the fields of machine learning and pattern recognition, analysis of high-throughput biomedical data, computational causal discovery, biomedical information retrieval, and biomedical informatics. He is an author of 100 peer-reviewed publications and principal investigator, co-principal investigator and co-investigator in 20 federal grants. He has 9 pending and granted patents in machine learning and biomedical informatics. In addition, Dr. Aliferis is a co-inventor of two SVM-based software systems (GEMS and FAST-AIMS). Dr. Aliferis and his lab have used extensively SVMs for academic and commercial projects in a variety of biomedical application domains.
+
+*** Douglas P. Hardin
+He is Professor in the Departments of Mathematics and Biomedical Informatics at Vanderbilt University. He is an author of more than 60 peer-reviewed publications and investigator in 11 grants. One of his primary research directions is variable selection with SVMs. Dr. Hardin has designed a course for biomedical informatics students and fellows that teaches SVMs without requiring extensive mathematical background. This course was offered at Vanderbilt University for the last 7 years and was very successful in educating dozens of students and fellows about SVMs.
+
+*** Isabelle Guyon
+She is a researcher and consultant in pattern recognition, machine learning, statistical data analysis, and data mining. She is a co-inventor of the support vector machine (SVM) method and the SVM-RFE variable selection method. These contributions have thousands of citations. For the past 10 years, she has been involved in analysis of high-throughput molecular data (for DNA microarrays, antibody arrays, and mass-spectrometers) and development of predictive models/signatures for many complex diseases and phenotypes. Her application of SVMs to prostate cancer DNA microarray data has led to the development
+of a diagnosis test for prostate cancer which is in the process of commercialization. She organized several challenges in machine learning including biological high-throughput molecular data in an effort to benchmark methods and identify the most effective ones. She co-authored and edited several books.
+
+
+* 可行性分析
+
+** 对标
+
+* 个人局限
+缺乏临床应用。
+学历不好看。
+
+* 中长期计划
+
+** 人工智能是不可忽视的发展趋势
+
+从原理来看，现有的人工智能技术的基础是感知机的层叠。
+感知机也是支持向量机的技术基础。
+
+在积累了支持向量机的应用经验后，团队转向和发展的存活几率会更乐观。
+
+
+** 数据传输和共享
+使用智慧合同是未来的趋势。
+
+在政策方面，区块链是由国家主席背书的。
+
+** 数据集成和分析
+
+在过去几年中，我们已经看到了电子病历中的数字化健康数据、智能手机捕获的健康数据和基因组数据等急剧增加的趋势。
+
+这些新型医疗数据集有许多用途。
+例如，医疗保险公司和那些直接支付雇员保险的公司可以用它们来完善保险精算模型；医生可以使用这些数据分析来帮助做出诊断和决策支持；患者也可以从数据的预后预测中受益。
+有了它们，患者和医疗专业人员间的实时报警功能正逐渐变成现实。
+
+*** 对标
+Human API和Validic等初创公司正在尝试帮助第三方将这些数据进行整合并集成到其他应用程序中。
+Flatiron Health和Foundation Medicine等公司的肿瘤学数据分析潜力正越来越为大众关注。
+Evidation Health也正利用其软件和应用程序促进大规模、快速的临床试验。
+
+* 盈利模式
+
+** 数据分析和科学可视化服务
+
+** 自媒体广告
+
+** 学术沙龙和再教育
+
+* 预算

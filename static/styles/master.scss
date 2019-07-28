@@ -1,0 +1,564 @@
+@import "_var";
+@import "../../node_modules/jeet/jeet";
+@import "w3s-image";
+@import "layout";
+@import "_id";
+@import "_tag";
+@import "_d3";
+@import "_parallax";
+
+// @include debug(lightblue);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
+  font-family: sans-serif;
+  color: $base03;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    color: $green;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+  }
+}
+
+a {
+
+  &:hover {
+    color: $base03;
+  }
+}
+
+br {
+  margin-bottom: .618em;
+}
+
+hr {
+  &.spektrum {
+    border: 0;
+    height: 1px;
+    background: $base03;
+    background-image: linear-gradient(to right, $ikeablue, $ikeayellow);
+    margin-top: .618em;
+    margin-bottom: .618em;
+  }
+
+  &.spektrum1 {
+    border: 0;
+    height: 1px;
+    background: $base03;
+    background-image: linear-gradient(to right, $ikeayellow, $orange1);
+    margin-top: .618em;
+    margin-bottom: .618em;
+  }
+
+  &.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    // background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    background-image: linear-gradient(to right, $ikeablue, $ikeayellow);
+    margin-top: 0.618em;
+    margin-bottom: 0.618em;
+  }
+}
+
+ul {
+  &.circle {
+    list-style-type: circle;
+  }
+  &.square {
+    list-style-type: square;
+  }
+}
+
+ol {
+  &.u-roman {
+    list-style-type: upper-roman;
+  }
+  &.l-roman {
+    list-style-type: lower-roman;
+  }
+  &.greek {
+    list-style-type: lower-greek;
+  }
+  &.hebrew {
+    list-style-type: hebrew;
+  }
+  &.hiragana {
+    list-style-type: hiragana;
+  }
+  &.hiragana-iroha {
+    list-style-type: hiragana-iroha;
+  }
+  &.katakana {
+    list-style-type: katakana;
+  }
+  &.katakana-iroha {
+    list-style-type: katakana-iroha;
+  }
+}
+
+blockquote {
+  padding: .618em;
+  color: $base02;
+  font-size: 1.2em;
+  font-family: monospace;
+  background-color: $base3;
+}
+
+section {
+  @include clearfix;
+  padding: 1.618em;
+  border: 1em solid rgba(0,0,0,0);
+  margin-bottom: 2em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h1, h2, h3 {
+    margin-top: .382em;
+    margin-bottom: .618em;
+  }
+
+  h1 {
+
+    font-size: 2em;
+    text-transform: uppercase;
+
+    .strong {
+      color: $blue;
+      font-weight: bold;
+      text-transform: lowercase;
+    }
+  }
+
+  article {
+    @include column(2/3);
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    color: $base03;
+
+
+
+    h2 {
+      // text-align: center;
+      font-size: 1.618em;
+      color: $blue;
+      font-weight: bold;
+      text-transform: capitalize;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    h3 {
+      text-transform: capitalize;
+    }
+
+    p {
+      margin-bottom: .618em;
+    }
+
+    a {
+      color: $blue;
+    }
+
+    ul {
+      list-style-type: hebrew;
+    }
+  }
+
+  aside {
+    @include column(1/3);
+    color: $base1;
+
+    a {
+      color: $blue;
+    }
+
+    ul {
+      list-style-type: hebrew;
+      li {
+
+
+      }
+    }
+  }
+}
+
+.subtitle {
+  font-weight: lighter;
+  color: $base0;
+  font-style: italic;
+  margin-bottom: .618em;
+
+}
+
+.strong {
+  color: $blue;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.omslag {
+  background-color: $base2;
+  border-radius: 2em 1em 4em / 0.5em 3em;
+  padding: 1em;
+
+
+  ol {
+    list-style-position: inside;
+
+    li {
+      color: $base02;
+      font-size: .618em;
+    }
+  }
+
+}
+
+.parallax-top {
+    background-image: url('../img/cover-ett.jpg');
+    position: relative;
+  	// opacity: 0.65;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+    min-height: 100%;
+}
+
+.parallax-m {
+    background-image: url('../img/parallax-m.jpg');
+    position: relative;
+  	// opacity: 0.65;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+    min-height: 100%;
+}
+
+.headerwrap {
+  position: absolute;
+  box-sizing: border-box;
+  border: 2em solid rgba(0,0,0,0);
+  left: 25%;
+  top: 25%;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
+
+  strong {
+    font-size: 1em;
+    color: $ikeayellow;
+  }
+
+  span {
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.83);
+    border-radius: 2em 1em 4em / 0.5em 3em;
+    padding: 0 1em;
+    color: whitesmoke;
+    text-transform: capitalize;
+  }
+
+  sup {
+    font-size: .618em;
+    color: $orange1;
+    font-weight: 100;
+    text-transform: lowercase;
+  }
+
+  h2 {
+    color: white;
+    padding-right: 1em;
+    // background-color: rgba(0, 0, 0, 0.83);
+  }
+
+  h4 {
+    color: white;
+    font-size: 1.25em;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+.beskrivning {
+  margin-top: 2em;
+  margin-bottom: 3em;
+  border: .618em solid rgba(0,0,0,0);
+  text-align: center;
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    font-size: 1.618em;
+  }
+}
+
+.caption {
+	position: absolute;
+	left: 0;
+	top: 38.2%;
+	width: 100%;
+	text-align: center;
+	color: #000;
+
+  span {
+    &.border {
+  		background-color: rgba(0, 0, 0, 0.83);
+  		color: #fff;
+  		padding: 18px;
+  		font-weight: 100;
+  		font-size: 25px;
+  	}
+  }
+
+  strong {
+    color: $blue;
+    font-weight: bold;
+  }
+}
+
+.work {
+  figure {
+    margin-bottom: 1em;
+  }
+
+  a {
+    opacity: .5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.blog {
+  article {
+    margin-bottom: .618em;
+  }
+
+  p {
+    padding: 1em;
+    line-height: 1.5;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  a {
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  .meta {
+    padding: 0 .618em;
+
+    span {
+      color: $base0;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 320px) {
+  .headerwrap {
+    left: 0;
+    span {
+      font-size: 1.2em;
+    }
+
+  }
+
+
+  .topnav {
+    a {
+      font-size: .83em;
+    }
+  }
+
+  section {
+    h1 {
+      font-size: 1.618em;
+    }
+    article {
+      @include center();
+      h2 {
+        font-size: 1.2em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+    aside {
+      @include center();
+    }
+  }
+
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3,
+  .footer {
+    background-attachment: scroll;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xs-width) {
+  .work {
+    figure {
+      @include column(1/2, $cycle: 2);
+    }
+  }
+
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+    background-attachment: scroll;
+  }
+
+}
+
+@media screen and (min-width: $breakpoint-sm-width) {
+  .blog {
+    article {
+      @include span(1/2);
+    }
+  }
+
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+    background-attachment: scroll;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .headerwrap {
+    left: 7%;
+    span {
+      font-size: 1.618em;
+    }
+
+  }
+
+  section {
+
+    article {
+      @include column(2/3);
+      margin-bottom: 2em;
+      font-size: 1.2em;
+      color: $base03;
+    }
+    aside {
+      @include column(1/3);
+      color: $base1;
+
+      a {
+        color: $blue;
+      }
+
+      ul {
+        list-style-type: hebrew;
+        li {
+
+
+        }
+      }
+    }
+  }
+
+  .work {
+    figure {
+      @include column(1/3, $cycle: 3);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg-width) {
+  .headerwrap {
+    span {
+      font-size: 1.618em *2;
+    }
+
+  }
+
+  .blog {
+    article {
+      @include span(1/4);
+    }
+  }
+
+  .bgimg-1 {
+  	position: relative;
+  	// opacity: 0.65;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-image: url("img/img_parallax-top.jpg");
+  	min-height: 100%;
+  }
+
+  .bgimg-2 {
+  	position: relative;
+  	opacity: 0.65;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-image: url("../img/img_parallax-middle-small.jpg");
+  	min-height: 400px;
+  }
+
+  .bgimg-3 {
+  	position: relative;
+  	opacity: 0.65;
+  	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-image: url("../img/img_parallax-bottom.jpg");
+  	min-height: 400px;
+  }
+
+  .footer {
+    background-attachment: fixed;
+  }
+
+}
+
+// TODO

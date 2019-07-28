@@ -1,0 +1,96 @@
+#+TITLE:RNA Modification and PUS
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{xeCJK,fontenc,xltxtra,xunicode}
+#+LATEX_HEADER: \defaultfontfeatures{Mapping=tex-text}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB}
+#+LATEX_HEADER: \setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+#+LATEX_HEADER: \XeTeXlinebreaklocale "zh"
+#+LATEX_HEADER: \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+#+LATEX_HEADER: \newfontfamily\bodyfont[]{Helvetica Neue}
+#+LATEX_HEADER: \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+#+LATEX_HEADER: \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+#+LATEX_HEADER: \renewcommand\abstractname{\textit{Exekutiv Sammanfattning}}
+#+LATEX_HEADER: \renewcommand\contentsname{\textit{Inneh\r{a}ll}}
+\hrule
+\begin{abstract}
+\noindent
+\vspace{3ex}
+\end{abstract}
+\tableofcontents
+\vspace{3ex}
+\hrule
+\vspace{3ex}
+\begin{center}
+  \noindent Powered by OrgMode and \LaTeX{}
+\end{center}
+\newpage
+
+* concepts
+pseudouridine(\Psi)
+
+PUS (Pseudouridine synthases)
+
+* 表观遗传新关注点—mRNA修饰
+表观遗传学研究关键点是修饰DNA及其蛋白质支架的化学标记，越来越多的研究表明这些化学标记能告诉细胞，哪些基因是表达，哪些是沉默的，因而也决定了个体的表型性状。
+
+　　mRNA即信使RNA，在中心法则中扮演了重要角色，但此前一些科学家们认为这种RNA只是完成传递的作用，把细胞核中编码的信息传递给蛋白翻译，然而研究证实，mRNA修饰正在定义一个复杂的新层面，并将随着epitranscriptome系统的发展而被广泛认知。
+
+　　最新Cell汇总了mRNA修饰新兴领域的重大突破，介绍了所涉及的分子，以及在mRNA转录物中发生的越来越多的修饰性功能。
+
+　　在分子生物学的中心法则中，遗传信息从DNA、RNA流向蛋白。基因组DNA和组蛋白上都存在可逆的表观遗传学修饰，这些修饰可以调控基因的表达，并由此决定细胞的状态，影响细胞的分化和发育。近年来人们发现，mRNA和其他RNA上也存在类似的调控机制。
+
+　　N6-methyladenosine（m6A）是真核生物mRNA上最常见的一种转录后修饰，介导了超过80%的RNA碱基甲基化。这种可逆的 mRNA甲基化修饰非常普遍，出现频率大约是3-5个残基/mRNA。m6A的研究发现开辟了真核生物转录后基因调控的新领域。
+
+　　芝加哥大学的何川（Chuan He）教授在Nature Reviews Molecular Cell Biology杂志上发表文章，探讨了这种mRNA修饰介导的转录后基因调控。
+
+　　何川教授主要从事化学生物学、核酸化学和生物学、遗传学等方面的研究。近年来在甲基化修饰，尤其是5hmC和m6A等方面获得了许多重要的发现。迄今已在Nature，Science等国际权威学术期刊发表了大量论文。曾荣获美国癌症研究青年科学家奖，凯克基金会医学研究杰出青年学者奖等多个奖项，并当选为顶级生命医学研究院HHMI研究员。
+
+　　人们已经鉴定了特异性识别m6A的蛋白，并对其进行了功能分析。研究显示，m6A是一种细胞加速mRNA代谢和翻译的修饰。在细胞分化、胚胎发育和压力应答等过程中，m6A将mRNA分组进行加工、翻译和衰变，进而指引它们各自的命运。何川教授还在文章中指出，m1A（N1-methyladenosine）、m5C（5-methylcytosine）、假尿嘧啶（pseudouridine）与m6A一同形成表观转录组，编码一个控制蛋白质合成的新层面。
+
+　　假尿嘧啶化的意外作用
+
+　　根据分子生物学的中心教条（又称中心法则），遗传信息是从DNA传递给RNA，再从RNA传递给蛋白质，其为活体生物中遗传信息的解码和翻译提供了一种简单的解释。
+
+　　当然在现实中，这一过程比近60年前DNA双螺旋结构的共同发现者、诺贝尔奖得主Francis Crick首次提出的要远远复杂得多。其一，有多种类型的RNA,其中的三种——信使RNA(mRNA)、转移RNA(tRNA)和核糖体RNA(rRNA)对于正确的蛋白质生成至关重要。此外，在转录过程中合成的RNAs往往还要经历后续的改变，这被称作为“转录后修饰”。
+
+　　尽管多年来已发现了多种这样的RNA修饰，但其中许多RNA修饰的功能和意义仍然是未解之谜。其中最常见的一种转录后修饰就是“假尿嘧啶化” (pseudouridylation)，在此过程中尿嘧啶核苷（U）化学结构发生改变形成假尿嘧啶核苷(ψ)分子。到目前为止，已在tRNA、rRNA、snRNA中发现了大量的ψ，然而人们认为ψ不存在于mRNA中。
+
+　　一个研究小组利用一种先进的高通量测序技术ψ-seq，绘制出了广泛的、高分辨率ψ位点图谱，证实假尿嘧啶化确实自然存在于mRNA中。
+
+　　知道假尿嘧啶化是由假尿嘧啶合成酶（pseudouridine synthases，PUS）所催化，该研究小组检测了正常的野生型酵母菌株以及PUS基因删除的突变株中mRNA假尿嘧啶化之间的差异。有趣的是，他们发现在正常酵母菌株中热休克可显著增高mRNA假尿嘧啶化位点的数量。并且，相比于遗传改造的酵母菌株，在野生型酵母菌株中假尿嘧啶化基因的表达水平要增高近25%。
+
+　　综上所述，这些结果表明了在酵母中热休克激活了一种动态的假尿嘧啶化程序，有可能通过提高不利条件下mRNA的稳定性给生物带来了益处。
+* Transcriptome-wide Mapping Reveals Widespread Dynamic-Regulated Pseudouridylation of ncRNA and mRNA
+Pseudouridine is the most abundant RNA modification, yet except for a few well-studied cases, little is known about the modified positions and their function(s). Here, we develop Ψ-seq for transcriptome-wide quantitative mapping of pseudouridine. We validate Ψ-seq with spike-ins and de novo identification of previously reported positions and discover hundreds of unique sites in human and yeast mRNAs and snoRNAs. Perturbing pseudouridine synthases (PUS) uncovers which pseudouridine synthase modifies each site and their target sequence features. mRNA pseudouridinylation depends on both site-specific and snoRNA-guided pseudouridine synthases. Upon heat shock in yeast, Pus7p-mediated pseudouridylation is induced at >200 sites, and PUS7 deletion decreases the levels of otherwise pseudouridylated mRNA, suggesting a role in enhancing transcript stability. rRNA pseudouridine stoichiometries are conserved but reduced in cells from dyskeratosis congenita patients, where the PUS DKC1 is mutated. Our work identifies an enhanced, transcriptome-wide scope for pseudouridine and methods to dissect its underlying mechanisms and function.
+
+由Whitehead研究所和Broad研究所的科研人员组成的一个研究小组，利用一种先进的高通量测序技术ψ-seq，绘制出了广泛的、高分辨率ψ位点图谱，证实假尿嘧啶化确实自然存在于mRNA中。在9月11日的《细胞》（Cell）杂志上，研究人员详细地描述了这种新方法和令人惊讶的研究发现。
+
+根据分子生物学的中心教条（又称中心法则），遗传信息是从DNA传递给RNA，再从RNA传递给蛋白质，其为活体生物中遗传信息的解码和翻译提供了一种简单的解释。
+
+当然在现实中，这一过程比近60年前DNA双螺旋结构的共同发现者、诺贝尔奖得主Francis Crick首次提出的要远远复杂得多。其一，有多种类型的RNA,其中的三种——信使RNA(mRNA)、转移RNA(tRNA)和核糖体RNA(rRNA)对于正确的蛋白质生成至关重要。此外，在转录过程中合成的RNAs往往还要经历后续的改变，这被称作为“转录后修饰”（延伸阅读：Cell综述：RNA修饰的新作用 ）。
+
+尽管多年来已发现了多种这样的RNA修饰，但其中许多RNA修饰的功能和意义仍然是未解之谜。其中最常见的一种转录后修饰就是“假尿嘧啶化” (pseudouridylation)，在此过程中尿嘧啶核苷（U）化学结构发生改变形成假尿嘧啶核苷(ψ)分子。到目前为止，已在tRNA、rRNA、snRNA中发现了大量的ψ，然而人们认为ψ不存在于mRNA中。
+
+现在由Whitehead研究所和Broad研究所的科研人员组成的一个研究小组，利用一种先进的高通量测序技术ψ-seq，绘制出了广泛的、高分辨率ψ位点图谱，证实假尿嘧啶化确实自然存在于mRNA中。在9月11日的《细胞》（Cell）杂志上，研究人员详细地描述了这种新方法和令人惊讶的研究发现。
+
+论文的共同第一作者、Whitehead 研究所创始成员Gerald Fink实验室博士后研究人员Douglas Bernstein说：“这真是一种更好的检测这种修饰的定量方法，其本身非常的有趣。在mRNA中发现这种修饰是一个意外的收获。”
+
+Bernstein与Broad研究所核心成员Aviv Regev实验室的博士后Schragi Schwartz和Max Mumbach合作，在酵母中绘制出了这一ψ图谱。在mRNA中的几十个位点发现假尿嘧啶化之后，该研究小组开始着手确定这种修饰的功能作用。
+
+知道假尿嘧啶化是由假尿嘧啶合成酶（pseudouridine synthases，PUS）所催化，该研究小组检测了正常的野生型酵母菌株以及PUS基因删除的突变株中mRNA假尿嘧啶化之间的差异。有趣的是，他们发现在正常酵母菌株中热休克可显著增高mRNA假尿嘧啶化位点的数量。并且，相比于遗传改造的酵母菌株，在野生型酵母菌株中假尿嘧啶化基因的表达水平要增高近25%。
+
+综上所述，这些结果表明了在酵母中热休克激活了一种动态的假尿嘧啶化程序，有可能通过提高不利条件下mRNA的稳定性给生物带来了益处。
+
+尽管研究人员是在酵母中阐析mRNA假尿嘧啶化的作用，这种方法学和研究结果对人类也有可能具有重要意义。作为这项研究工作的组成部分，科学家们对一组人类细胞进行了ψ-seq，证实人类和酵母细胞之间的mRNA假尿嘧啶化位点惊人的相似。值得注意的是，包括先天性角化不良在许多的人类疾病都与PUS基因突变相关，表明ψ-seq或可应用于揭示RNA假尿嘧啶化在人类疾病中的影响。
+
+* Pus enzymes and disease
+The importance of stand-alone pseudouridine synthases is further underlined by the fact that mutations in the human PUS1 and PUS3 genes are associated with inherited diseases. MLASA stands for mitochondrial myopathy, lactic acidosis and sideroblastic anemia, an autosomal recessive disease in humans. It is an oxidative phosphorylation and iron metabolism disorder in skeletal muscle and bone marrow and is caused by different mutations, for example in the mitochondrial tyrosyl-tRNA synthetase gene, but also in PUS1.12 In 2 families, a homozygous missense mutation was found that results in a R116W substitution in the Pus1 protein; this arginine is located very close to the catalytic aspartate in the conserved catalytic core of the protein suggesting potential effects on pseudouridylation by this Pus1 variant. Indeed, patients were found to be lacking the modifications of U27 and U28 in selected tRNAs.71 Alternatively, MLASA can also be caused by a stop mutation in PUS1 that deletes almost half of the amino acid residues of the Pus1 protein.72 Recently, a long-surviving patient with sideroblastic anemia and mild cognitive impairment with 2 novel mutations in PUS1 was described.73 Together, the discovery of multiple disease-causing mutations in PUS1 underlines the importance of PUS1, in particular for mitochondria, even though the Pus1 enzyme is localized to the nucleus in yeast. Obviously, we are still lacking a detailed understanding of the molecular pathology of MLASA. A new Pus1-deficient mouse model may help to further elucidate the physiologic function of the Pus1 enzyme and suggests an effect of PUS1 mutations on muscle metabolism related to mitochondria.74 In this regard it is noteworthy that mutations in the PUS1 gene also affect cellular differentiation in the haploid protozoan parasite Toxoplasma gondii that can cause a lifelong, chronic infection in humans.75 Very recently, a homozygous, truncated form of Pus3 has been found to be present in patients with an intellectual disability which is accompanied by reduced levels of U39 pseudouridylation in tRNA in these patients.76 Taken together the 2 examples of diseases caused by PUS1 and PUS3 mutations indicates that these enzymes are particularly important for mitochondrial function in muscle as well as for the brain; possibly, in both cases the affected tissue may have increased sensitivity to translational deficiency due to reduced levels of pseudouridylation in tRNA, but it cannot be excluded that other pseudouridylation targets of these enzymes are implicated in the diseases.
+
+\newpage
+*Referenser*
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5699540/
+- https://www.antpedia.com/news/47/n-2225747.html

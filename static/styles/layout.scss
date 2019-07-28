@@ -1,0 +1,123 @@
+
+
+#main {
+  min-height: 500px;
+  margin: 0px;
+  padding: 0px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  > {
+    article {
+      margin: 4px;
+      padding: 5px;
+      // border: 1px solid #cccc33;
+      // border-radius: 7pt;
+      // background: #dddd88;
+      -webkit-flex: 3 1 60%;
+      flex: 3 1 60%;
+      -webkit-order: 2;
+      order: 2;
+      font-size: 1.2em;
+
+      &::first-letter {
+        // color: $blue;
+        font-size: 1.618em * 2;
+        float: left;
+        line-height: 1;
+        margin: 0 5px;
+      }
+    }
+    nav {
+      margin: 4px;
+      padding: 5px;
+      // border: 1px solid #8888bb;
+      // border-radius: 7pt;
+      // background: #ccccff;
+      -webkit-flex: 1 6 20%;
+      flex: 1 6 20%;
+      -webkit-order: 1;
+      order: 1;
+      text-align: center;
+    }
+    aside {
+      margin: 4px;
+      padding: 5px;
+      // border: 1px solid #8888bb;
+      // border-radius: 7pt;
+      // background: #ccccff;
+      -webkit-flex: 1 6 20%;
+      flex: 1 6 20%;
+      -webkit-order: 3;
+      order: 3;
+    }
+  }
+}
+
+header, footer {
+  display: block;
+  padding: 1em;
+  // border: 17px dashed rgba(2,2,5,0.5);
+  border-radius: 2em 1em 4em / 0.5em 3em;
+  background: $blue;
+  color: $base3;
+  text-align: center;
+}
+
+.footer {
+  background-image: url('../img/cover-ett.jpg');
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.83;
+  padding: 2em;
+  background-color: $base03;
+  color: white;
+  text-align: center;
+  border-radius: 2em 1em 4em / 0.5em 3em;
+
+  strong {
+    color: $ikeayellow;
+    font-size: 1em;
+  }
+
+  h2, h3, p {
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px #000;
+  }
+
+  h2 {
+    font-size: 1.618em;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: $blue;
+  }
+}
+
+@media all and (max-width: 640px) {
+  #main, #page {
+    -webkit-flex-flow: column;
+    flex-direction: column;
+  }
+  #main > {
+    article, nav, aside {
+      -webkit-order: 0;
+      order: 0;
+    }
+    nav, aside {
+      min-height: 50px;
+      max-height: 50px;
+    }
+  }
+  header, footer {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}

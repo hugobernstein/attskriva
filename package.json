@@ -1,0 +1,32 @@
+{
+  "name": "attskriva",
+  "version": "1.0.0",
+  "description": "Hugo's Tech Notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vuepress:dev": "vuepress dev vuepress",
+    "vuepress:build": "vuepress build vuepress"
+  },
+  "keywords": [],
+  "author": "hugobernstein",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-html2pug": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "jeet": "^7.2.0",
+    "jquery": "^3.4.1",
+    "jstransformer-markdown-it": "^2.1.0",
+    "shelljs": "^0.8.3",
+    "vuepress": "^1.0.2"
+  }
+}

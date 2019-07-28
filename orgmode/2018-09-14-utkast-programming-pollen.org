@@ -1,0 +1,20 @@
+#+TITLE:utkast programming pollen
+#+OPTIONS: toc:nil
+#+STARTUP: showall indent
+#+STARTUP: hidestars
+
+* programming pollen
+
+** tag functions
+
+*** tag-function syntax
+
+*** point of no *return*
+
+*** multiple input values & rest arguments
+
+*** returning an X-expression
+
+*** using variables within strings
+
+*** parsing attributes
