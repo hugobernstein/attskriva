@@ -81,7 +81,7 @@ export function publiceranytt(done) {
 }
 
 export function pubVue() {
-  return gulp.src('vuepress/.vuepress/dist/*')
+  return gulp.src('vuepress/.vuepress/dist/**/*')
     .pipe(gulp.dest('./docs'));
 }
 
