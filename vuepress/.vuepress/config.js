@@ -9,6 +9,8 @@ module.exports = {
           { text: 'vuepress', link: '/vuepress' }
         ]
       }
-    ]
+    ],
+    sidebar: ['/', '/om', '/stack']
   }
+
 }
