@@ -1,5 +1,5 @@
 module.exports = {
   title: 'Anteckningarna',
-  base: '/docs/',
+  base: '/attskriva/',
   repo: 'https://hugobernstein.github.io/attskriva'
 }
