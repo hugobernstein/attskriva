@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "vuepress:dev": "vuepress dev vuepress",
-    "vuepress:build": "vuepress build vuepress"
+    "vuepress:build": "vuepress build vuepress",
+    "vuep4github:dev": "vuepress dev vuep4github",
+    "vuep4github:build": "vuepress build vuep4github"
   },
   "keywords": [],
   "author": "hugobernstein",
