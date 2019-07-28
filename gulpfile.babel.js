@@ -148,3 +148,4 @@ const vp = gulp.series(pubVue);
 
 gulp.task('default', build);
 gulp.task('pubVue', pubVue);
+gulp.task('visa', gulp.series(serve));
